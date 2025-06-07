@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Site Meta Data -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Save, organize, and share your favorite websites easily with Bookmarker — the smart bookmark manager for seamless online access anytime, anywhere. Boost productivity, declutter your browser, and discover trending content in one place."
+    />
+    <!-- Site Title -->
+    <title>Bookmark</title>
+    <!-- Link Favicon to Site Head -->
+    <link rel="icon" href="./image/bookmark.ico" />
+    <!-- Link fontawesome External Styles -->
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <!-- Link Bootsrtap External Styles -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- Link Custom External Styles -->
+    <link rel="stylesheet" href="./CSS/main.css" />
+  </head>
+  <body>
+    <!-- Start of Main Section -->
+    <main id="bookmarker-homepage" class="py-5 position-relative">
+      <!-- Start of Header Section -->
+      <header id="bookmarker-homepage-header">
+        <div class="container">
+          <div class="inner d-flex justify-content-center">
+            <h1 class="text-capitalize">bookmarker</h1>
+          </div>
+        </div>
+      </header>
+      <!-- End of Header Section -->
+
+      <!-- Start of Favourite Sites Register Form Section -->
+      <section id="fav-sites-register-form">
+        <div class="container">
+          <div class="row gy-4 mt-5 px-3 pb-4">
+            <div class="col-12">
+              <div class="inner">
+                <h2 class="text-center">
+                  <i class="fa-solid fa-bookmark"></i> Bookmark your favorite
+                  sites <i class="fa-solid fa-bookmark"></i>
+                </h2>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <label for="bookmarkname" class="text-capitalize pb-2"
+                  ><i class="fa-solid fa-book-bookmark pe-2"></i>site
+                  name</label
+                >
+                <input
+                  type="text"
+                  id="bookmarkname"
+                  placeholder="Bookmark Name"
+                  class="form-control"
+                  oninput="validateFormInputFields(this)"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <label for="website-url" class="text-capitalize pb-2"
+                  ><i class="fa-solid fa-chain pe-2"></i>Website URL</label
+                >
+                <input
+                  type="text"
+                  id="websiteurl"
+                  placeholder="Website URL"
+                  class="form-control"
+                  oninput="validateFormInputFields(this)"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-custom text-capitalize px-5"
+                  onclick="createSite()"
+                >
+                  submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Favourite Sites Register Form Section -->
+
+      <!-- Start of Favourite Sites Table Section -->
+      <section id="fav-sites-register-table">
+        <div class="container">
+          <table class="mt-4 mb-3 w-100 text-center table">
+            <thead>
+              <th class="text-capitalize">index</th>
+              <th class="text-capitalize">website name</th>
+              <th class="text-capitalize">visit</th>
+              <th class="text-capitalize">delete</th>
+            </thead>
+            <tbody id="sites-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+      <!-- End of Favourite Sites Table Section -->
+
+      <!-- Start of Submission Validation Popup Section -->
+      <section
+        id="submission-validation-popup"
+        class="position-fixed d-none justify-content-center align-items-center w-100 top-0 bottom-0"
+      >
+        <div class="inner p-4 bg-white rounded shadow">
+          <header
+            class="d-flex justify-content-between align-items-center mb-4"
+          >
+            <div class="circles d-flex">
+              <span class="rounded-circle me-2"></span>
+              <span class="rounded-circle me-2"></span>
+              <span class="rounded-circle me-2"></span>
+            </div>
+            <button
+              type="button"
+              class="border-0 bg-transparent p-0"
+              onclick="closePopup()"
+            >
+              <i class="fa-solid fa-xmark fs-3"></i>
+            </button>
+          </header>
+          <article>
+            <p class="mb-0 pb-2">
+              Site Name or Url is not valid, Please follow the rules below :
+            </p>
+            <ul class="m-0 p-0">
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                contain at least 3 characters
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                valid one
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <!-- End of Submission Validation Popup Section -->
+    </main>
+    <!-- End of Main Section -->
+    <script src="./js/index.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
