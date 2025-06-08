@@ -55,18 +55,19 @@
 # Pseudo Class 
 ------------------------------------------*/
 :root {
-  --main-color: rgb(247, 236, 222);
+  --bg-color: rgb(247, 236, 222);
+  --main-color: rgb(254, 194, 96);
   --h1-color: rgb(53, 46, 40);
 }
 /*----------------------------------------- 
 # General Styles 
 ------------------------------------------*/
 ::selection {
-  background-color: rgb(254, 194, 96);
+  background-color: var(--main-color);
   color: rgb(53, 46, 40);
 }
 body {
-  background-color: var(--main-color);
+  background-color: var(--bg-color);
   font-size: 1rem;
   font-family: "PT Sans Caption Regular";
 }
@@ -86,7 +87,7 @@ label {
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
-  border-color: rgb(254, 194, 96);
+  border-color: var(--main-color);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(254, 194, 96, 0.25);
 }
@@ -95,7 +96,7 @@ label {
 ------------------------------------------*/
 #bookmarker-homepage-header .container h1::before {
   content: "";
-  background-color: rgb(254, 194, 96);
+  background-color: var(--main-color);
   height: 31.666666666667%;
   width: 100%;
   position: absolute;
